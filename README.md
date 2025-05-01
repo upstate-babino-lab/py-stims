@@ -49,13 +49,13 @@ This creates the file `example.stims.json` which can be loaded by [EyeStims](htt
     {
       "name": "Solid",
       "bgColor": "green",
-      "durationMs": 5000,
+      "durationMs": 2000,
       "bodyMs": 1000
     },
     {
       "name": "Bar",
       "bgColor": "black",
-      "durationMs": 5000,
+      "durationMs": 2000,
       "fgColor": "orange",
       "width": 10,
       "speed": 10,
@@ -64,7 +64,7 @@ This creates the file `example.stims.json` which can be loaded by [EyeStims](htt
     {
       "name": "SqrGrating",
       "bgColor": "black",
-      "durationMs": 5000,
+      "durationMs": 2000,
       "angle": 45,
       "fgColor": "white",
       "speed": 10,
@@ -73,7 +73,7 @@ This creates the file `example.stims.json` which can be loaded by [EyeStims](htt
     {
       "name": "SinGrating",
       "bgColor": "black",
-      "durationMs": 5000,
+      "durationMs": 2000,
       "angle": -45,
       "fgColor": "white",
       "speed": 50,

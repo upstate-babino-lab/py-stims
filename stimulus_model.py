@@ -13,7 +13,7 @@ class StimTypeName(Enum):
 class BaseStimulus(BaseModel):
     name: StimTypeName
     bgColor: Optional[str] = "black"
-    durationMs: Optional[int] = 5000
+    durationMs: Optional[int] = 2000
     headMs: Optional[int] = None  # Duration of black before body
     bodyMs: Optional[int] = None  # Duration of stim between head and tail
     tailMs: Optional[int] = None  # Duration of black after body
