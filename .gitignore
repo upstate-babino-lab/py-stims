@@ -1,0 +1,65 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Package/distributable formats
+.eggs/
+dist/
+build/
+sdist/
+*.egg-info/
+.python-version
+_venv
+venv
+env
+ENV
+*.pth
+*.env
+
+# Installed packages (you might want to keep this if you're deploying a specific virtualenv)
+# lib/
+# include/
+
+# Unit test / coverage reports
+.coverage
+coverage.xml
+htmlcov/
+.pytest_cache/
+nosetests.xml
+doctests.txt
+profile.out
+junit*.xml
+
+# Translations
+*.mo
+*.pot
+
+# Documentation
+docs/_build/
+*.pdf
+
+# Editor-specific files and directories
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# OS-specific files (adjust as needed)
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook related (if applicable)
+.ipynb_checkpoints/
+
+# MyPy cache (if applicable)
+.mypy_cache/
+
+# Other temporary files
+*.log
+*.tmp
+*.bak
+*.orig
+*~$
