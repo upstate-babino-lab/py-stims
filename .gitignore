@@ -41,7 +41,6 @@ docs/_build/
 
 # Editor-specific files and directories
 .idea/
-.vscode/
 *.swp
 *.swo
 *.sublime-project
