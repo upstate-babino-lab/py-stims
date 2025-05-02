@@ -16,7 +16,7 @@ $ conda env create -f environment.yml -n stims
 $ conda activate stims
 ```
 
-## Example
+## Minimal Example
 
 The program `example_stims.py` creates four stimuli:
 
@@ -90,3 +90,8 @@ This creates the file `example.stims.json` which can be loaded by [EyeStims](htt
   ]
 }
 ```
+
+## More complex Example
+
+For a more interesting example, see [sinusoidal_grating.py](sinusoidal_grating.py)
+

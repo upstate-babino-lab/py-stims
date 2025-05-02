@@ -64,9 +64,10 @@ class SqrGrating(Grating):
 
 
 Stimulus = RootModel[Union[Solid, Bar, SinGrating, SqrGrating]]
+Stimuli = List[Stimulus]
 
 
 class StimSequence(BaseModel):
     name: str
     description: Optional[str] = "Generated from " + __file__
-    stimuli: List[Stimulus]
+    stimuli: Stimuli

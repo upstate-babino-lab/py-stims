@@ -1,8 +1,8 @@
-from stimulus_model import Solid, SinGrating, StimSequence
+from stimulus_model import Solid, SinGrating, StimSequence, Stimuli
 import uuid
 import random
 
-repetitions = 3  # 25
+repetitions = 4  # 25
 durations = [2000]  # Multiples of 20
 # 0 is 1 (max) contrast, -1 is 0.1 contrast, -2 is 0.01
 # -2.2 is minimal contrast, <=-2.3 is same color for 8 bit color
@@ -34,14 +34,13 @@ widths = [round(1 / cpd) for cpd in cpds]  # Degrees
 
 colors = [
     [linear_to_hex(c) for c in log_contrast_to_linear(logC)]
-    for logC in [(x * log_contrast_step + start_log_contrast) for x in range(n_contrasts)]
+    for logC in [
+        (x * log_contrast_step + start_log_contrast) for x in range(n_contrasts)
+    ]
 ]
 
 
-stimuli: list[Solid | SinGrating] = []  # Using Union for type hinting
-left: SinGrating
-right: SinGrating
-id: str
+stimuli: Stimuli = []
 
 for size in widths:
     for angle in angles:
@@ -49,7 +48,6 @@ for size in widths:
             for duration_ms in durations:
                 for _ in range(repetitions):  # Changed i to _ as it's not used
                     id = str(uuid.uuid4())
-                    before = Solid(durationMs=1000, meta={"group": id})
 
                     left = SinGrating(
                         durationMs=duration_ms,
@@ -64,7 +62,6 @@ for size in widths:
                     )
                     stimuli.append(left)
 
-                    id = str(uuid.uuid4())
                     right = SinGrating(
                         durationMs=duration_ms,
                         headMs=0,
