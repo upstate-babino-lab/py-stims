@@ -1,15 +1,15 @@
 {
   "name": "Example stims from Python",
-  "description": "Generated from /home/pwellner/myrepos/py-stims/example_stims.py",
+  "description": "Generated from /Users/pwellner/myrepos/py-stims/example_stims.py",
   "stimuli": [
     {
-      "name": "Solid",
+      "stimType": "Solid",
       "bgColor": "green",
       "durationMs": 2000,
       "bodyMs": 1000
     },
     {
-      "name": "Bar",
+      "stimType": "Bar",
       "bgColor": "black",
       "durationMs": 2000,
       "fgColor": "orange",
@@ -18,7 +18,7 @@
       "angle": 45
     },
     {
-      "name": "SqrGrating",
+      "stimType": "SqrGrating",
       "bgColor": "black",
       "durationMs": 2000,
       "angle": 45,
@@ -27,7 +27,7 @@
       "width": 10
     },
     {
-      "name": "SinGrating",
+      "stimType": "SinGrating",
       "bgColor": "black",
       "durationMs": 2000,
       "angle": -45,

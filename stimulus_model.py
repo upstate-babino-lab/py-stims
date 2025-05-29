@@ -11,7 +11,7 @@ class StimTypeName(Enum):
 
 
 class BaseStimulus(BaseModel):
-    name: StimTypeName
+    stimType: StimTypeName
     bgColor: Optional[str] = "black"
     durationMs: Optional[int] = 2000
     headMs: Optional[int] = None  # Duration of black before body
@@ -36,11 +36,11 @@ class BaseStimulus(BaseModel):
 
 
 class Solid(BaseStimulus):
-    name: StimTypeName = "Solid"
+    stimType: StimTypeName = "Solid"
 
 
 class Bar(BaseStimulus):
-    name: Optional[StimTypeName] = "Bar"
+    stimType: Optional[StimTypeName] = "Bar"
     fgColor: Optional[str] = "white"
     width: Optional[int] = 10  # Degrees
     speed: Optional[int] = 10  # Degrees per second
@@ -48,7 +48,7 @@ class Bar(BaseStimulus):
 
 
 class Grating(BaseStimulus):
-    name: Literal["SinGrating", "SqrGrating"]
+    stimType: Literal["SinGrating", "SqrGrating"]
     angle: Optional[int] = 45  # Degrees
     fgColor: Optional[str] = "white"  # Half the width
     speed: Optional[int] = 10  # Degrees per second
@@ -56,11 +56,11 @@ class Grating(BaseStimulus):
 
 
 class SinGrating(Grating):
-    name: str = "SinGrating"
+    stimType: str = "SinGrating"
 
 
 class SqrGrating(Grating):
-    name: str = "SqrGrating"
+    stimType: str = "SqrGrating"
 
 
 Stimulus = RootModel[Union[Solid, Bar, SinGrating, SqrGrating]]

@@ -3,14 +3,17 @@
 Python utilities for creating `.stims.json` stimulus sequence files, for use with EyeStims
 
 ## Install dependency
-With Python version `> 3.10`, there is only one dependency: 
+
+With Python version `> 3.10`, there is only one dependency:
 
 ```Bash
 $ pip install pydantic
 ```
 
 #### Or, use the provided Conda environment:
+
 Assuming you have already [installed conda](https://docs.conda.io/projects/conda/en/stable/user-guide/install/index.html)
+
 ```
 $ conda env create -f environment.yml -n stims
 $ conda activate stims
@@ -55,13 +58,13 @@ This creates the file `example.stims.json` which can be loaded by [EyeStims](htt
   "description": "Generated from /home/pwellner/myrepos/py-stims/example_stims.py",
   "stimuli": [
     {
-      "name": "Solid",
+      "stimType": "Solid",
       "bgColor": "green",
       "durationMs": 2000,
       "bodyMs": 1000
     },
     {
-      "name": "Bar",
+      "stimType": "Bar",
       "bgColor": "black",
       "durationMs": 2000,
       "fgColor": "orange",
@@ -70,7 +73,7 @@ This creates the file `example.stims.json` which can be loaded by [EyeStims](htt
       "angle": 45
     },
     {
-      "name": "SqrGrating",
+      "stimType": "SqrGrating",
       "bgColor": "black",
       "durationMs": 2000,
       "angle": 45,
@@ -79,7 +82,7 @@ This creates the file `example.stims.json` which can be loaded by [EyeStims](htt
       "width": 10
     },
     {
-      "name": "SinGrating",
+      "stimType": "SinGrating",
       "bgColor": "black",
       "durationMs": 2000,
       "angle": -45,
