@@ -52,7 +52,7 @@ class Grating(BaseStimulus):
     angle: Optional[int] = 45  # Degrees
     fgColor: Optional[str] = "white"  # Half the width
     speed: Optional[int] = 10  # Degrees per second
-    width: Optional[int] = 10  # Degrees
+    cpd: Optional[float] = 10  # Degrees
 
 
 class SinGrating(Grating):

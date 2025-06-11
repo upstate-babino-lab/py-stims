@@ -3,14 +3,13 @@ import uuid
 import random
 
 repetitions = 4  # 25
-durations = [2000]  # Multiples of 20
+durations = [1000]  # Multiples of 20
 # 0 is 1 (max) contrast, -1 is 0.1 contrast, -2 is 0.01
 # -2.2 is minimal contrast, <=-2.3 is same color for 8 bit color
 start_log_contrast = 0
 log_contrast_step = -0.1
 n_contrasts = 5
 angles = [45]
-n_widths = 5
 speed = 10  # Degrees per second
 
 
@@ -30,7 +29,6 @@ def log_contrast_to_linear(log_c: float) -> list[float]:
 
 
 cpds = [0.01, 0.1, 0.2, 0.3, 0.4, 0.5]  # Cycles per degree
-widths = [round(1 / cpd) for cpd in cpds]  # Degrees
 
 colors = [
     [linear_to_hex(c) for c in log_contrast_to_linear(logC)]
@@ -39,14 +37,13 @@ colors = [
     ]
 ]
 
-
 stimuli: Stimuli = []
 
-for size in widths:
+for cpd in cpds:
     for angle in angles:
         for color_pair in colors:
             for duration_ms in durations:
-                for _ in range(repetitions):  # Changed i to _ as it's not used
+                for _ in range(repetitions):
                     id = str(uuid.uuid4())
 
                     left = SinGrating(
@@ -55,10 +52,10 @@ for size in widths:
                         bodyMs=500,
                         bgColor=color_pair[0],
                         speed=speed,
-                        width=size,
+                        cpd=cpd,
                         angle=angle,
                         fgColor=color_pair[1],
-                        meta={"group": id, "class": "FORWARD"},
+                        meta={"group": id},
                     )
                     stimuli.append(left)
 
@@ -68,12 +65,11 @@ for size in widths:
                         bodyMs=500,
                         bgColor=color_pair[0],
                         speed=speed,
-                        width=size,
+                        cpd=cpd,
                         angle=-angle,
                         fgColor=color_pair[1],
                         meta={
                             "group": id,
-                            "class": "REVERSE",
                         },
                     )
                     stimuli.append(right)
@@ -81,7 +77,7 @@ for size in widths:
 random.shuffle(stimuli)
 
 stim_sequence = StimSequence(
-    name="Sinusoidal Grating",
+    name="Grating pairs",
     description="Generated from " + __file__,
     stimuli=stimuli,
 )
