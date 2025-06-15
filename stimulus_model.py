@@ -68,6 +68,6 @@ Stimuli = List[Stimulus]
 
 
 class StimSequence(BaseModel):
-    name: str
+    title: str
     description: Optional[str] = "Generated from " + __file__
     stimuli: Stimuli

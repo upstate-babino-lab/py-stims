@@ -54,7 +54,7 @@ This creates the file `example.stims.json` which can be loaded by [EyeStims](htt
 
 ```JSON
 {
-  "name": "Example stims from Python",
+  "title": "Example stims from Python",
   "description": "Generated from /home/pwellner/myrepos/py-stims/example_stims.py",
   "stimuli": [
     {

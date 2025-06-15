@@ -8,7 +8,7 @@ stimuli = [
 ]
 
 stim_sequence = StimSequence(
-    name="Example stims from Python",
+    title="Example stims from Python",
     description="Generated from " + __file__,
     stimuli=stimuli,
 )

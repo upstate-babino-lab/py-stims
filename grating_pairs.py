@@ -77,7 +77,7 @@ for cpd in cpds:
 random.shuffle(stimuli)
 
 stim_sequence = StimSequence(
-    name="Grating pairs",
+    title="Grating pairs",
     description="Generated from " + __file__,
     stimuli=stimuli,
 )
