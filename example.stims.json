@@ -1,6 +1,6 @@
 {
   "title": "Example stims from Python",
-  "description": "Generated from /Users/pwellner/myrepos/py-stims/example_stims.py",
+  "description": "Generated from /home/pwellner/myrepos/py-stims/example_stims.py",
   "stimuli": [
     {
       "stimType": "Solid",
@@ -18,13 +18,24 @@
       "angle": 45
     },
     {
+      "stimType": "Dot",
+      "bgColor": "black",
+      "durationMs": 2000,
+      "fgColor": "white",
+      "d": 10.0,
+      "x": 4.0,
+      "y": 5.0,
+      "toX": 20.0,
+      "toY": 20.0
+    },
+    {
       "stimType": "SqrGrating",
       "bgColor": "black",
       "durationMs": 2000,
       "angle": 45,
       "fgColor": "white",
       "speed": 10,
-      "width": 10
+      "cpd": 10.0
     },
     {
       "stimType": "SinGrating",
@@ -33,7 +44,7 @@
       "angle": -45,
       "fgColor": "white",
       "speed": 50,
-      "width": 10
+      "cpd": 10.0
     }
   ]
 }

@@ -1,8 +1,9 @@
-from stimulus_model import Solid, Bar, SinGrating, SqrGrating, StimSequence
+from stimulus_model import Solid, Dot, Bar, SinGrating, SqrGrating, StimSequence
 
 stimuli = [
     Solid(bodyMs=1000, bgColor="green"),
     Bar(fgColor="orange"),
+    Dot(x=4, y=5, toX=20, toY=20),
     SqrGrating(),
     SinGrating(speed=50, angle=-45),
 ]

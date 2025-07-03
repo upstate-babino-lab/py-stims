@@ -6,6 +6,7 @@ from pydantic import RootModel, BaseModel, field_validator
 class StimTypeName(Enum):
     Solid = "Solid"
     Bar = "Bar"
+    Dot = "Dot"
     SinGrating = "SinGrating"
     SqrGrating = "SqrGrating"
 
@@ -39,8 +40,28 @@ class Solid(BaseStimulus):
     stimType: StimTypeName = "Solid"
 
 
+class Dot(BaseStimulus):
+    stimType: StimTypeName = "Dot"
+    fgColor: Optional[str] = "white"
+    d: Optional[float] = 10  # Diameter in degrees
+    x: Optional[float] = 0  # Horizontal degrees of center from left
+    y: Optional[float] = 0  # Vertical degrees of center from top
+    toX: Optional[float] = x  # Horizontal degrees of center from left at duration
+    toY: Optional[float] = y  # Vertical degrees of center from top at duration
+
+
+class Dot(BaseStimulus):
+    stimType: StimTypeName = "Dot"
+    fgColor: Optional[str] = "white"
+    d: Optional[float] = 10  # Diameter in degrees
+    x: Optional[float] = 0  # Horizontal degrees of center from left
+    y: Optional[float] = 0  # Vertical degrees of center from top
+    toX: Optional[float] = x  # Horizontal degrees of center from left at duration
+    toY: Optional[float] = y  # Vertical degrees of center from top at duration
+
+
 class Bar(BaseStimulus):
-    stimType: Optional[StimTypeName] = "Bar"
+    stimType: StimTypeName = "Bar"
     fgColor: Optional[str] = "white"
     width: Optional[int] = 10  # Degrees
     speed: Optional[int] = 10  # Degrees per second
@@ -63,7 +84,7 @@ class SqrGrating(Grating):
     stimType: str = "SqrGrating"
 
 
-Stimulus = RootModel[Union[Solid, Bar, SinGrating, SqrGrating]]
+Stimulus = RootModel[Union[Solid, Dot, Bar, SinGrating, SqrGrating]]
 Stimuli = List[Stimulus]
 
 
