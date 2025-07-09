@@ -96,4 +96,4 @@ This creates the file `example.stims.json` which can be loaded by [EyeStims](htt
 
 ## More complex Example
 
-For a more interesting example, see [grating_pairs.py](grating_pairs.py
+For a more interesting example, see [grating_pairs.py](grating_pairs.py)
