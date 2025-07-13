@@ -1,21 +1,13 @@
 # py-stims
 
-Python utilities for creating `.stims.json` stimulus sequence files, for use with EyeStims
+Python utilities for creating `.stims.json` stimulus sequence files, for use with [EyeStims](https://github.com/upstate-babino-lab/eye-stims/)
 
-## Install dependency
-
-With Python version `> 3.10`, there is only one dependency:
-
-```Bash
-$ pip install pydantic
-```
-
-#### Or, use the provided Conda environment:
+#### Use the provided Conda environment:
 
 Assuming you have already [installed conda](https://docs.conda.io/projects/conda/en/stable/user-guide/install/index.html)
 
 ```
-$ conda env create -f environment.yml -n stims
+$ conda env update -f environment.yml
 $ conda activate stims
 ```
 
